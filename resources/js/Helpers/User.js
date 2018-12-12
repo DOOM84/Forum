@@ -18,6 +18,7 @@ class User {
 
         if (Token.isValid(access_token)) {
             AppStorage.store(username, access_token)
+            window.location='/forum';
         }
     }
 
@@ -35,7 +36,8 @@ class User {
     }
 
     logOut(){
-        AppStorage.clear()
+        AppStorage.clear();
+        window.location = '/forum'
     }
 
     name(){
