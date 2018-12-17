@@ -8,6 +8,8 @@
                 <div class="ml-2">
                     said {{data.created_at}}
                 </div>
+                <v-spacer></v-spacer>
+                <like :content="data"></like>
             </v-card-title>
             <v-divider></v-divider>
             <edit-reply
@@ -35,8 +37,9 @@
 
 <script>
     import editReply from './editReply'
+    import like from '../likes/like'
     export default {
-        components:{editReply},
+        components:{editReply, like},
         props:['data', 'index'],
         data(){
             return {

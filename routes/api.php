@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::apiResource('/question/{question}/reply', 'ReplyController');
 
 Route::post('/like/{reply}', 'LikeController@likeIt');
 Route::delete('/like/{reply}', 'LikeController@unLikeIt');
+
+Route::post('notifications', 'NotificationController@index');
+Route::post('markAsRead', 'NotificationController@markAsRead');
 
 Route::group([
 
